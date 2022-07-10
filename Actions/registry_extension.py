@@ -125,7 +125,7 @@ def backup(root: RootKeys, path: str, fname: str) -> None:
         winreg.SaveKey(key, f"{path}/{fname}.reg")
 
 @implements(Operation)
-class Registry(Operation):
+class Extension(Operation):
     "Registry Action"
 
     __annotations__ = {
