@@ -4,6 +4,13 @@
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/registry_extension.py",
         "dependencies": [
             "pywin32"
-        ]
+        ],
+        "version": 1
+    },
+    "Hold": {
+        "platform": "*",
+        "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/hold_extension.py",
+        "dependencies": [],
+        "version": 1
     }
 }
