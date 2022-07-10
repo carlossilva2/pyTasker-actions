@@ -12,5 +12,11 @@
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/hold_extension.py",
         "dependencies": [],
         "version": 1
+    },
+    "Sleep": {
+        "platform": "*",
+        "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/sleep_extension.py",
+        "dependencies": [],
+        "version": 1
     }
 }

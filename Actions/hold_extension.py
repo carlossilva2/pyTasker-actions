@@ -1,3 +1,5 @@
+import datetime
+import time
 from logging import Logger
 
 from Tasker.common import alias, ref
@@ -6,7 +8,6 @@ from Tasker.types import OperationType as Operation
 from Tasker.types import ParserType as Parser
 from Tasker.types import Task
 
-import time
 
 @implements(Operation)
 class Extension(Operation):
@@ -29,10 +30,59 @@ class Extension(Operation):
 
     def execute(self) -> None:
         if self.task["type"] == "time":
-            time_array = self.task["condition"].split(":")[0]
-            while time.strftime("%H") != time_array[0] and time.strftime("%M") != time_array[1] and time.strftime("%S") != time_array[2]:
-                pass
-            print(time.strftime("%H:%M:%S"))
+            time_array = [int(_) for _ in self.task["condition"].split(":")]
+            t = datetime.datetime.today()
+            future = datetime.datetime(
+                t.year,
+                t.month,
+                t.day,
+                time_array[0],
+                time_array[1],
+                time_array[2],
+            )
+            if (
+                t.hour >= time_array[0]
+                and t.minute > time_array[1]
+                and t.second > time_array[2]
+            ):
+                future += datetime.timedelta(days=1)
+            time.sleep((future - t).total_seconds())
+        elif self.task["type"] == "date":
+            date_array = [int(_) for _ in self.task["condition"].split("-")]
+            t = datetime.datetime.today()
+            future = datetime.datetime(date_array[0], date_array[1], date_array[2])
+            if (
+                t.year > date_array[0]
+                and t.month > date_array[1]
+                and t.day > date_array[2]
+            ):
+                future += datetime.timedelta(days=365)
+            time.sleep((future - t).total_seconds())
+        elif self.task["type"] == "datetime":
+            date_array = [
+                int(_) for _ in self.task["condition"].split(" ")[0].split("-")
+            ]
+            time_array = [
+                int(_) for _ in self.task["condition"].split(" ")[1].split(":")
+            ]
+            all_array = [*date_array, *time_array]
+            t = datetime.datetime.today()
+            future = datetime.datetime(
+                all_array[0],
+                all_array[1],
+                all_array[2],
+                all_array[3],
+                all_array[4],
+                all_array[5],
+            )
+            if (
+                t.year >= all_array[0]
+                and t.month >= all_array[1]
+                and t.day >= all_array[2]
+                and t.hour >= all_array[3]
+            ):
+                future += datetime.timedelta(days=1)
+            time.sleep((future - t).total_seconds())
 
     def rollback(self) -> None:
         pass
