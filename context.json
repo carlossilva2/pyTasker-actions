@@ -1,0 +1,9 @@
+{
+    "Registry": {
+        "platform": "Windows",
+        "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/registry_extension.py",
+        "dependencies": [
+            "pywin32"
+        ]
+    }
+}
