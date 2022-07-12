@@ -5,18 +5,27 @@
         "dependencies": [
             "pywin32"
         ],
-        "version": 1
+        "version": 1.0
     },
     "Hold": {
         "platform": "*",
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/hold_extension.py",
         "dependencies": [],
-        "version": 1
+        "version": 1.0
     },
     "Sleep": {
         "platform": "*",
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/sleep_extension.py",
         "dependencies": [],
-        "version": 1
+        "version": 1.0
+    },
+    "Download": {
+        "platform": "*",
+        "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/download_extension.py",
+        "dependencies": [
+            "requests",
+            "yaspin"
+        ],
+        "version": 1.0
     }
 }
