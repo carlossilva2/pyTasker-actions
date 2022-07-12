@@ -49,10 +49,10 @@ class Extension(Operation):
                     "wb",
                 ).write(file.content)
                 spin.text = "Download Complete"
-                spin.ok("✓")
+                spin.ok("[DONE]")
             except Exception:
                 spin.text = "Download Failed"
-                spin.fail("❌")
+                spin.fail("[FAIL]")
 
     def rollback(self) -> None:
         pass
