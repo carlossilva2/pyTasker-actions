@@ -27,5 +27,11 @@
             "yaspin"
         ],
         "version": 1.0
+    },
+    "CSV": {
+        "platform": "*",
+        "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/csv_extension.py",
+        "dependencies": [],
+        "version": 1.0
     }
 }
