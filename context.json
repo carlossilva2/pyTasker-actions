@@ -1,6 +1,7 @@
 {
     "Registry": {
         "platform": "Windows",
+        "description": "Manipulate Windows registry",
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/registry_extension.py",
         "dependencies": [
             "pywin32"
@@ -9,18 +10,21 @@
     },
     "Hold": {
         "platform": "*",
+        "description": "Hold Task flow execution",
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/hold_extension.py",
         "dependencies": [],
         "version": 1.0
     },
     "Sleep": {
         "platform": "*",
+        "description": "Pause Task flow execution",
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/sleep_extension.py",
         "dependencies": [],
         "version": 1.0
     },
     "Download": {
         "platform": "*",
+        "description": "Perform a download",
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/download_extension.py",
         "dependencies": [
             "requests",
@@ -30,6 +34,7 @@
     },
     "CSV": {
         "platform": "*",
+        "description": "Reads, Write and stores CSV data",
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/csv_extension.py",
         "dependencies": [],
         "version": 1.0
