@@ -40,12 +40,12 @@ class Extension(Operation):
                         url, {"value": self.task["url"], "public": False}
                     )
 
-                if "discord.com/api/webhook" not in self.task["url"]:
+                if "discord.com/api/webhooks" not in self.task["url"]:
                     raise Exception("Not a discord link")
 
                 params = {
                     "username": "pyTaskerBot",
-                    "avatar_url": "",
+                    "avatar_url": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/static/bot.png",
                     "content": self.task["content"]
                 }
                 if "embedded" in self.task.keys():
@@ -53,10 +53,7 @@ class Extension(Operation):
 
                 requests.post(
                     self.task["url"],
-                    headers={
-                        "Content-Type": "application/json"
-                    },
-                    params=params
+                    data=params
                 )
                 spin.text = "Notification sent"
                 spin.ok("[DONE]")
