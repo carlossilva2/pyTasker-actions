@@ -38,5 +38,15 @@
         "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/csv_extension.py",
         "dependencies": [],
         "version": 1.0
+    },
+    "Discord": {
+        "platform": "*",
+        "description": "Send a notification to Discord via webhook",
+        "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/discord_extension.py",
+        "dependencies": [
+            "requests",
+            "yaspin"
+        ],
+        "version": 1.0
     }
 }
