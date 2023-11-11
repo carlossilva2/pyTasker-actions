@@ -48,5 +48,14 @@
             "yaspin"
         ],
         "version": 1.0
+    },
+    "Winget": {
+        "platform": "Windows",
+        "description": "Install applications via Winget",
+        "extension": "https://raw.githubusercontent.com/carlossilva2/pyTasker-actions/main/Actions/winget_extension.py",
+        "dependencies": [
+            "yaspin"
+        ],
+        "version": 1.0
     }
 }
