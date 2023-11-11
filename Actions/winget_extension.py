@@ -1,12 +1,10 @@
-from logging import WARNING, Logger, getLogger
+from logging import Logger
 
-import requests
 from Tasker.common import alias, ref
 from Tasker.inspector import implements
 from Tasker.types import OperationType as Operation
 from Tasker.types import ParserType as Parser
 from Tasker.types import Task
-from validators import ValidationFailure, url
 from yaspin import yaspin
 from subprocess import call as shell
 
@@ -33,7 +31,7 @@ class Extension(Operation):
     def execute(self) -> None:
         with yaspin(text=f"Installing {self.task['package-name']}", color="yellow", timer=True) as spin:
             try:
-                shell(f"winget install --id={self.task['package-id']}", shell=True)
+                shell(f"winget install --id={self.task['package-id']} -e", shell=True)
                 spin.text = "Install Completed"
                 spin.ok("[DONE]")
             except Exception:
